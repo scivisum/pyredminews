@@ -706,9 +706,9 @@ class Redmine_WS(object):
         # get the data and return XML object
         if payload:
             request.add_header('Content-Type', payload_type)
-            response = urllib2.urlopen( request, payload )
+            response = urllib2.urlopen( request, payload, timeout=0.2 )
         else:
-            response = urllib2.urlopen( request )
+            response = urllib2.urlopen( request, timeout=0.2 )
 
         return response
 
